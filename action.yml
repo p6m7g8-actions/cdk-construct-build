@@ -40,10 +40,9 @@ runs:
       run: |
         set +e
         sudo corepack enable
-        ls -alFh /usr/bin/y*
-        sudo rm -f /usr/bin/yarn /usr/bin/yarnpkg
         sudo /usr/local/node-v22.11.0-linux-x64/bin/npm install -g yarn --force
-        sudo mv /usr/bin/yarn /usr/bin/yarnpkg /usr/local/node-v22.11.0-linux-x64/bin
+        sudo ln -fs /usr/bin/yarn /usr/local/node-v22.11.0-linux-x64/bin/yarn
+        sudo ln -fs /usr/bin/yarnpkg /usr/local/node-v22.11.0-linux-x64/bin/yarnpkg
     - name: Check Node
       shell: bash
       run: |
