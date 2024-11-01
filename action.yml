@@ -40,6 +40,7 @@ runs:
       run: |
         set +e
         sudo corepack enable
+        sudo corepack prepare yarn@latest --activate
         sudo /usr/local/node-v22.11.0-linux-x64/bin/npm install -g yarn@latest --force
         sudo ln -fs /usr/bin/yarn /usr/local/node-v22.11.0-linux-x64/bin/yarn
         sudo ln -fs /usr/bin/yarnpkg /usr/local/node-v22.11.0-linux-x64/bin/yarnpkg
