@@ -39,7 +39,7 @@ runs:
       shell: bash
       run: |
         sudo corepack enable
-        sudo /usr/local/node-v22.11.0-linux-x64/bin/npm install -g yarn
+        sudo /usr/local/node-v22.11.0-linux-x64/bin/npm install -g yarn --force
     - name: Check Node
       shell: bash
       run: |
