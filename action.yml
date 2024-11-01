@@ -59,6 +59,7 @@ runs:
       shell: bash
       run: |
         yarn install
+        yarn explain peer-requirements
     # - name: Cache NPM dependencies
     #   uses: actions/cache@v4.1.2
     #   with:
