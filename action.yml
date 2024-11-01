@@ -43,6 +43,7 @@ runs:
       shell: bash
       run: |
         set +e
+        ls -alFh /usr/local/node-v22.11.0-linux-x64/bin
         which node
         which npm
         which yarn
