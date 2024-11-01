@@ -39,6 +39,7 @@ runs:
       shell: bash
       run: |
         sudo corepack enable
+        sudo corepack prepare yarn@latest --activate
     - name: Check Node
       shell: bash
       run: |
