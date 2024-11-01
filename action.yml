@@ -29,7 +29,7 @@ runs:
         sudo tar -xJf node-v22.11.0-linux-x64.tar.xz -C /usr/local
         echo "/usr/local/node-v22.11.0-linux-x64/bin" >> $GITHUB_PATH
     - name: Restore NPM node_modules cache
-      uses: actions/cache@v4.1.2
+      uses: actions/cache/restore@v4.1.2
       with:
         path: node_modules
         key: ${{ runner.os }}-yarn-node_modules-${{ hashFiles('yarn.lock') }}
