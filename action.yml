@@ -1,5 +1,6 @@
-name: "Build Composite Action"
-description: "P6 Action: Build a CDK Construct"
+name: "P6 GHA: Builds a CDK Construct"
+description: "P6 GHA: Builds a CDK Construct"
+author: "Philip M. Gollucci"
 inputs:
   aws_region:
     description: "AWS region for deployment"
