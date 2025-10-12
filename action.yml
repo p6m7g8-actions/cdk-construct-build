@@ -22,11 +22,11 @@ runs:
   using: "composite"
   steps:
     - name: Checkout code
-      uses: actions/checkout@v4.2.2
+      uses: actions/checkout@v5.0.0
     - name: Setup Node
       uses: p6m7g8-actions/node-yarn-setup@main
     - name: Assume role using OIDC
-      uses: aws-actions/configure-aws-credentials@v4.0.2
+      uses: aws-actions/configure-aws-credentials@v5.1.0
       with:
         aws-region: ${{ inputs.aws_region }}
         role-to-assume: ${{ inputs.aws_role }}
