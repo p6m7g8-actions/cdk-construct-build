@@ -15,3 +15,15 @@
           cdk_deploy_account: ${{ secrets.CDK_DEPLOY_ACCOUNT }}
           cdk_deploy_region: ${{ secrets.CDK_DEPLOY_REGION }}
 ```
+
+## When AWS credentials are required
+
+The AWS inputs are optional, and the OIDC role-assumption step is skipped when
+`aws_role` is empty. A construct build that only runs `jsii` codegen needs no AWS
+at all, and previously failed at the credentials step for no reason.
+
+The consequence is worth knowing: an unset or misnamed `AWS_ROLE` secret renders
+as an empty string, so the step is skipped rather than failing loudly. If your
+`ci:gha` performs CDK context lookups such as `Vpc.fromLookup` or an SSM image
+lookup, pass `aws_role` and grant `id-token: write`, or those lookups will fail
+later with an opaque AWS error instead of a clear one here.

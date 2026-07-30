@@ -26,6 +26,7 @@ runs:
     - name: Setup Node
       uses: p6m7g8-actions/node-yarn-setup@main
     - name: Assume role using OIDC
+      if: ${{ inputs.aws_role != '' }}
       uses: p6m7g8-actions/aws-credentials@main
       with:
         aws-region: ${{ inputs.aws_region }}
