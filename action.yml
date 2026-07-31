@@ -22,12 +22,12 @@ runs:
   using: "composite"
   steps:
     - name: Checkout code
-      uses: p6m7g8-actions/checkout@main
+      uses: p6m7g8-actions/gh-repo-checkout@main
     - name: Setup Node
-      uses: p6m7g8-actions/node-yarn-setup@main
+      uses: p6m7g8-actions/p6-node-yarn-setup@main
     - name: Assume role using OIDC
       if: ${{ inputs.aws_role != '' }}
-      uses: p6m7g8-actions/aws-credentials@main
+      uses: p6m7g8-actions/p6-aws-setup@main
       with:
         aws-region: ${{ inputs.aws_region }}
         role-to-assume: ${{ inputs.aws_role }}
